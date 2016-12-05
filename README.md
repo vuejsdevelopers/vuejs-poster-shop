@@ -2,6 +2,10 @@
 
 ### Vue.js Poster Store
 
+#### Demo
+
+See the completed project here: [https://vuejs-poster-shop.herokuapp.com/](https://vuejs-poster-shop.herokuapp.com/)
+
 #### Pre-installation
 
 1. Ensure that npm is installed globally

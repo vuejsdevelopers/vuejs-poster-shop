@@ -2,7 +2,6 @@ var express = require('express');
 var app = express();
 var path = require('path');
 var server = require('http').createServer(app);
-var reload = require('reload');
 var axios = require('axios');
 var querystring = require('querystring');
 
@@ -35,7 +34,9 @@ app.get('/search/:query', function(req, res) {
 app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')));
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
-reload(server, app);
+if (process.env.NODE_ENV !== 'production') {
+  require('reload')(server, app);
+}
 
 server.listen(process.env.PORT, function () {
   console.log('Listening on port '.concat(process.env.PORT))
