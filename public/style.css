@@ -23,7 +23,7 @@ button:focus, input:focus {
 }
 
 [v-cloak] {
-    display: none;
+    display: none !important;
 }
 
 .fade-enter-active {
