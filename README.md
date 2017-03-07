@@ -1,10 +1,12 @@
-# Vue.js Essentials: Build Your First Vue App
+# Ultimate Vue.js Developers Course
 
-### Vue.js Poster Store
+Source code for the [Ultimate Vue.js Developers Course](https://www.udemy.com/course/1022582) on Udemy.
+
+### Project 1: Vue.js Poster Shop
 
 #### Demo
 
-See the completed project here: [https://vuejs-poster-shop.herokuapp.com/](https://vuejs-poster-shop.herokuapp.com/)
+See the completed project here: [https://vuejs-poster-shop.getjsdojo.com/](https://vuejs-poster-shop.getjsdojo.com/)
 
 #### Pre-installation
 
