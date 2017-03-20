@@ -21,7 +21,7 @@ See the completed project here: [http://vuejs-poster-shop.vuejsdevelopers.com/](
 
     ```
     cd /path/to/install/location
-    git clone git@github.com:getjsdojo/vuejs-poster-shop.git
+    git clone git@github.com:vuejsdevelopers/vuejs-poster-shop.git
     ```
 
 2. Install dependencies
