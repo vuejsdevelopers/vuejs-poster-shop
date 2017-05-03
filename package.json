@@ -1,7 +1,7 @@
 {
   "name": "vuejs-poster-shop",
   "version": "1.0.0",
-  "description": "Vue.js Essentials: Build Your First Vue App",
+  "description": "Ultimate Vue.js Developers Course",
   "main": "index.js",
   "scripts": {
     "start": "nodemon ./index.js --ignore node_modules/ -e js,html,css"
@@ -9,7 +9,7 @@
   "author": "Anthony Gore <info@getjsdojo.com>",
   "repository" : {
     "type" : "git",
-    "url" : "https://github.com/getjsdojo/vuejs-poster-shop"
+    "url" : "https://github.com/vuejsdevelopers/vuejs-poster-shop"
   },
   "license": "UNLICENSED",
   "dependencies": {
