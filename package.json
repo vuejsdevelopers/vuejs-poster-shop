@@ -7,9 +7,9 @@
     "start": "nodemon ./index.js --ignore node_modules/ -e js,html,css"
   },
   "author": "Anthony Gore <info@getjsdojo.com>",
-  "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/vuejsdevelopers/vuejs-poster-shop"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/vuejsdevelopers/vuejs-poster-shop"
   },
   "license": "UNLICENSED",
   "dependencies": {
