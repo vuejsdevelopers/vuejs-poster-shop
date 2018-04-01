@@ -43,7 +43,7 @@ See the completed project here: [http://vuejs-poster-shop.vuejsdevelopers.com/](
 2. Change directory into the local clone of the repository
 
     ```
-    cd vuejs-poster-shop.git
+    cd vuejs-poster-shop
     ```
 
 3. Install dependencies
