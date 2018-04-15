@@ -10,7 +10,7 @@ See the completed project here: [http://vuejs-poster-shop.vuejsdevelopers.com/](
 
 #### Pre-installation
 
-1. Ensure [NPM](https://docs.npmjs.com) and [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) are installed on your system
+1. Ensure [Node.js  >=4](https://nodejs.org/en/download/), [NPM](https://docs.npmjs.com) and [git](https://git-scm.com/book/en/v2/Getting-Started-Installing-Git) are installed on your system
 2. Register Oauth 2 access to the [Imgur API](https://api.imgur.com/oauth2/addclient).
 
     Register for OAuth 2 authorization without a callback URL. You can name your application anything you like and you don't need a callback URL. The important thing is that you get a *client ID*. 
@@ -18,27 +18,15 @@ See the completed project here: [http://vuejs-poster-shop.vuejsdevelopers.com/](
 #### Installation
 
 1. Install this code on your local system
- 
-    **Option 1 (recommended)**
-    
-    1. Fork this repository (see top right corner)
+     
+    1. Fork this repository (click 'Fork' button in top right corner)
     2. Clone the forked repository on your local file system
     
         ```
         cd /path/to/install/location
         
-        git clone git@github.com:[your_username]/vuejs-poster-shop.git
+        git clone https://github.com/[your_username]/vuejs-poster-shop.git
         ```
-    
-    **Option 2 (easier)**
-    
-    This option is better if you're not a Github user or are not sure how to setup SSH keys
-    
-    ```
-    cd /path/to/install/location
-    
-    git clone https://github.com/vuejsdevelopers/vuejs-poster-shop.git
-    ```  
 
 2. Change directory into the local clone of the repository
 
@@ -58,7 +46,13 @@ See the completed project here: [http://vuejs-poster-shop.vuejsdevelopers.com/](
     cp .env_sample .env
     ```
     
-    Now edit the .env file and replace the `IMGUR_CLIENT_ID` with the client ID provided in the pre-installation
+    Or for Windows:
+    
+    ```
+    copy .env_sample .env
+    ```
+    
+    Now edit the *.env* file and replace the `IMGUR_CLIENT_ID` with the client ID provided in the pre-installation
     
 5. Start project
 
@@ -67,3 +61,17 @@ See the completed project here: [http://vuejs-poster-shop.vuejsdevelopers.com/](
     ```
 
 6. Your site will be available at *localhost:[PORT]* where `PORT` is whatever value is set in your `.env` file.
+
+
+#### It's not working!
+
+Here are some common mistakes people make, check these before filing an issue:
+
+- `ENOENT: no such file or directory, open '.env'`. You forgot to make a *.env* file. See step 3.
+- `EADDRINUSE :::3000`. You already have another application using port 3000. Either end it, or change your port to something else in the *.env* file to resolve the conflict e.g. `3001`
+- `Error: Request failed with status code 403`. You didn't create an Imgur API key, or didn't paste it into your *.env* file. See pre-installation step 2.
+- Ensure you have a version of Node >= 4
+
+```
+node -v
+```
