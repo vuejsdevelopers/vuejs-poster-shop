@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon ./index.js --ignore node_modules/ -e js,html,css"
   },
-  "author": "Anthony Gore <info@getjsdojo.com>",
+  "author": "Anthony Gore <anthony@vuejsdevelopers.com>",
   "repository" : {
     "type" : "git",
     "url" : "https://github.com/vuejsdevelopers/vuejs-poster-shop"
@@ -19,8 +19,8 @@
     "express": "^4.14.0",
     "querystring": "^0.2.0",
     "scrollmonitor": "^1.2.0",
-    "vue": "^2.1.0",
-    "vue-resource": "^1.0.3"
+    "vue": "~2.1.0",
+    "vue-resource": "~1.0.3"
   },
   "devDependencies": {
     "nodemon": "^1.11.0",
