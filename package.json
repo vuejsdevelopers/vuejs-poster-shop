@@ -8,8 +8,8 @@
   },
   "author": "Anthony Gore <anthony@vuejsdevelopers.com>",
   "repository" : {
-    "type" : "git",
-    "url" : "https://github.com/vuejsdevelopers/vuejs-poster-shop"
+    "type": "git",
+    "url": "https://github.com/vuejsdevelopers/vuejs-poster-shop"
   },
   "engines": {
     "node": ">=4"
