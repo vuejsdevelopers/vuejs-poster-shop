@@ -1,7 +1,7 @@
 {
   "name": "vuejs-poster-shop",
-  "version": "1.0.0",
-  "description": "Ultimate Vue.js Developers Course",
+  "version": "1.1.0",
+  "description": "Ultimate Vue.js Developers Course - Vue.js Poster Shop",
   "main": "index.js",
   "scripts": {
     "start": "nodemon ./index.js --ignore node_modules/ -e js,html,css"
@@ -11,19 +11,29 @@
     "type" : "git",
     "url" : "https://github.com/vuejsdevelopers/vuejs-poster-shop"
   },
+  "engines": {
+    "node": ">=4"
+  },
+  "homepage": "http://vuejs-poster-shop.vuejsdevelopers.com/",
+  "keywords": [
+    "vue",
+    "vue.js",
+    "course",
+    "node"
+  ],
   "license": "UNLICENSED",
   "dependencies": {
-    "axios": "^0.15.2",
-    "body-parser": "^1.15.2",
-    "dotenv": "^2.0.0",
+    "axios": "~0.15.2",
+    "body-parser": "~1.18.2",
+    "dotenv": "~2.0.0",
     "express": "^4.14.0",
-    "querystring": "^0.2.0",
-    "scrollmonitor": "^1.2.0",
+    "querystring": "~0.2.0",
+    "scrollmonitor": "~1.2.0",
     "vue": "~2.1.0",
     "vue-resource": "~1.0.3"
   },
   "devDependencies": {
-    "nodemon": "^1.11.0",
-    "reload": "^1.1.0"
+    "nodemon": "~1.11.0",
+    "reload": "~1.1.0"
   }
 }
