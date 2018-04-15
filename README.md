@@ -40,13 +40,19 @@ See the completed project here: [http://vuejs-poster-shop.vuejsdevelopers.com/](
     git clone https://github.com/vuejsdevelopers/vuejs-poster-shop.git
     ```  
 
-2. Install dependencies
+2. Change directory into the local clone of the repository
+
+    ```
+    cd vuejs-poster-shop
+    ```
+
+3. Install dependencies
 
     ```
     npm install
     ```
 
-3. Create a `.env` file by copying the sample
+4. Create a `.env` file by copying the sample
 
     ```
     cp .env_sample .env
@@ -54,10 +60,10 @@ See the completed project here: [http://vuejs-poster-shop.vuejsdevelopers.com/](
     
     Now edit the .env file and replace the `IMGUR_CLIENT_ID` with the client ID provided in the pre-installation
     
-4. Start project
+5. Start project
 
     ```
     npm run start
     ```
 
-5. Your site will be available at *localhost:[PORT]* where `PORT` is whatever value is set in your `.env` file.
+6. Your site will be available at *localhost:[PORT]* where `PORT` is whatever value is set in your `.env` file.
