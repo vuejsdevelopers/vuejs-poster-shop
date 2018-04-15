@@ -62,4 +62,5 @@ See the completed project here: [http://vuejs-poster-shop.vuejsdevelopers.com/](
 Here are some common mistakes people make, check these before filing an issue:
 
 - `ENOENT: no such file or directory, open '.env'`. You forgot to make a *.env* file. See step 3.
-- `EADDRINUSE :::3000`. You already have another application using port 3000. Either end it, or change your port to something else in the *.env* file e.g. `3001`
+- `EADDRINUSE :::3000`. You already have another application using port 3000. Either end it, or change your port to something else in the *.env* file to resolve the conflict e.g. `3001`
+- `Error: Request failed with status code 403`. You didn't create an Imgur API key, or didn't paste it into your *.env* file. See pre-installation step 2.
