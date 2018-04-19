@@ -12,7 +12,7 @@
     "url": "https://github.com/vuejsdevelopers/vuejs-poster-shop"
   },
   "engines": {
-    "node": ">=4"
+    "node": ">=6.4"
   },
   "homepage": "http://vuejs-poster-shop.vuejsdevelopers.com/",
   "keywords": [
