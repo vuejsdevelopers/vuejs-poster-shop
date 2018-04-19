@@ -32,6 +32,14 @@ new Vue({
       return this.results.length === this.items.length && this.results.length;
     }
   },
+  watch: {
+    cart: {
+      handler: function() {
+        console.log('cart changed');
+      },
+      deep: true
+    }
+  },
   methods: {
     appendItems: function() {
       if (this.items.length < this.results.length) {
