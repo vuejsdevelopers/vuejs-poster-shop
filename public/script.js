@@ -40,18 +40,20 @@ new Vue({
       }
     },
     onSubmit: function() {
-      this.lastSearch = this.newSearch;
-      this.loading = true;
-      this.items = [];
-      this.results = [];
-      this.$http
-        .get('/search/'.concat(this.newSearch))
-        .then(function(res) {
-          this.loading = false;
-          this.results = res.data;
-          this.appendItems();
-        })
-      ;
+      if (this.newSearch.length) {
+        this.lastSearch = this.newSearch;
+        this.loading = true;
+        this.items = [];
+        this.results = [];
+        this.$http
+          .get('/search/'.concat(this.newSearch))
+          .then(function(res) {
+            this.loading = false;
+            this.results = res.data;
+            this.appendItems();
+          })
+        ;
+      }
     },
     addItem: function(index) {
       var item = this.items[index];
