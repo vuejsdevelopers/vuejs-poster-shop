@@ -1,8 +1,8 @@
 var PRICE = 9.99;
 var LOAD_NUM = 10;
 
-var pusher = new Pusher('c5f886b768d885937f95', {
-  cluster: 'ap1',
+var pusher = new Pusher('[PUSHER_KEY]', {
+  cluster: '[PUSHER_CLUSTER]',
   encrypted: true
 });
 
