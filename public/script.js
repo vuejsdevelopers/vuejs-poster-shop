@@ -16,8 +16,7 @@ new Vue({
     newSearch: 'anime',
     lastSearch: '',
     loading: false,
-    price: PRICE,
-    pusherUpdate: false
+    price: PRICE
   },
   mounted: function() {
     this.onSubmit();
@@ -29,12 +28,7 @@ new Vue({
     });
     var channel = pusher.subscribe('cart');
     channel.bind('update', function(data) {
-      vue.pusherUpdate = true;
-      vue.cart = data;
-      vue.total = 0;
-      for (var i = 0; i < vue.cart.length; i++) {
-        vue.total += PRICE * vue.cart[i].qty;
-      }
+      console.log(data);
     });
   },
   filters: {
@@ -50,11 +44,7 @@ new Vue({
   watch: {
     cart: {
       handler: function(val) {
-        if (!this.pusherUpdate) {
-          this.$http.post('/cart_update', val);
-        } else {
-          this.pusherUpdate = false;
-        }
+        this.$http.post('/cart_update', val);
       },
       deep: true
     }
