@@ -44,7 +44,7 @@ new Vue({
   },
   computed: {
     noMoreItems: function() {
-      return this.results.length === this.items.length && this.results.length;
+      return this.results.length === this.items.length && this.results.length > 0;
     }
   },
   watch: {
