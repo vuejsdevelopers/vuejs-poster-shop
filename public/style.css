@@ -22,10 +22,6 @@ button:focus, input:focus {
     opacity: 0.8;
 }
 
-[v-cloak] {
-    display: none !important;
-}
-
 .fade-enter-active {
     transition: opacity .5s
 }
