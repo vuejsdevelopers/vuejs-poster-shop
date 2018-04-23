@@ -27,6 +27,11 @@ new Vue({
       return '$'.concat(price.toFixed(2));
     }
   },
+  computed: {
+    noMoreItems: function() {
+      return this.results.length === this.items.length && this.results.length > 0;
+    }
+  },
   methods: {
     appendItems: function() {
       if (this.items.length < this.results.length) {
