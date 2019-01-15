@@ -26,9 +26,9 @@
     "axios": "~0.15.2",
     "body-parser": "~1.18.2",
     "dotenv": "~2.0.0",
-    "express": "^4.14.0",
-    "pusher": "^1.5.1",
-    "pusher-js": "^4.2.2",
+    "express": "~4.16.3",
+    "pusher": "~1.5.1",
+    "pusher-js": "~4.2.2",
     "querystring": "~0.2.0",
     "scrollmonitor": "~1.2.0",
     "vue": "~2.1.0",
@@ -36,6 +36,6 @@
   },
   "devDependencies": {
     "nodemon": "~1.11.0",
-    "reload": "~1.1.0"
+    "reload": "~2.4.0"
   }
 }
