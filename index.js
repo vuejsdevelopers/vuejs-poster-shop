@@ -35,7 +35,7 @@ app.use('/node_modules', express.static(path.join(__dirname, 'node_modules')));
 app.use('/public', express.static(path.join(__dirname, 'public')));
 
 if (process.env.NODE_ENV !== 'production') {
-  require('reload')(server, app);
+  require('reload')(app);
 }
 
 server.listen(process.env.PORT, function () {
