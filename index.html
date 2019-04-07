@@ -17,15 +17,42 @@
 <div id="app">
     <div class="header">
         <h1>Vue.js Poster Store</h1>
+        <form action="" class="searchbar" v-on:submit.prevent="onSubmit">
+            <input type="text" v-model="search" name="search" id="">
+            <button type="submit" value="Search" class="btn">Search</button>
+        </form>
+        <div v-if="loading">Loading....</div>
+        <div v-else>Found {{items.length}} for your search term '{{this.search}}'</div>
     </div>
     <div class="main">
         <div class="products">
-            <p>Products go here.</p>
+            <div v-for="(item,index) in items">
+                <div>
+                    <div class="product-image">
+                        <img v-bind:src="item.link" alt="" srcset="">
+                    </div>
+                </div>
+                    <h4 class="product-title">{{item.title}}</h4>
+                    <button class="btn" v-on:click="addtoCart(index)">Add</button>
+            </div>
         </div>
+
         <div class="cart">
             <h2>Shopping Cart</h2>
-            <div>
-                No items in the cart.
+            <ul>
+            <li class="cart-item"  v-for="cartitem in cart">
+                <div class="cart-title">   {{cartitem.title}}
+                <span class="item-qty">{{cartitem.qty}} x {{cartitem.price|currency}}</span>   
+            <button class="btn" v-on:click="dec(cartitem)">-</button>
+            <button class="btn" v-on:click="inc(cartitem)">+</button>   
+            </div>
+            </li>
+        </ul>
+            <div v-if="cart.length">
+                <div>Total: {{total|currency}}</div>
+            </div>
+            <div v-else>
+                No Item In the Cart
             </div>
         </div>
     </div>
@@ -33,6 +60,8 @@
 
 <!-- Scripts -->
 <script src="/reload/reload.js"></script>
+<script src="./node_modules/vue/dist/vue.js"></script>
+<script src="./node_modules/vue-resource/dist/vue-resource.js"></script>
 <script type="text/javascript" src="public/script.js"></script>
 
 </body>
