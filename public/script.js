@@ -5,7 +5,7 @@ new Vue({
         total:0,
         items:[],
         cart:[],
-        search:'',
+        search:'anime',
         loading:true
     },
     methods:{
@@ -61,5 +61,8 @@ new Vue({
         currency:function(price){
             return '$'.concat(price.toFixed(2));
         }
+    },
+    mounted:function(){
+        this.onSubmit();
     }
 });
