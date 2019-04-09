@@ -20,12 +20,12 @@
     </div>
     <div class="main">
         <div class="products">
-            <p>Products go here.</p>
+            <button v-on:click="addToCart">Add to Cart</button>
         </div>
         <div class="cart">
             <h2>Shopping Cart</h2>
             <div>
-                No items in the cart.
+                total: {{ total }}
             </div>
         </div>
     </div>
@@ -33,6 +33,7 @@
 
 <!-- Scripts -->
 <script src="/reload/reload.js"></script>
+<script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
 <script type="text/javascript" src="public/script.js"></script>
 
 </body>
