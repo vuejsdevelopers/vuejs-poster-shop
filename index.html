@@ -15,16 +15,35 @@
 </head>
 <body>
 <div id="app">
-    <div class="header">
-        <h1>Vue.js Poster Store</h1>
+    <div class="container">
+        <div class="header">
+            <h1>Vue.js Poster Store</h1>
+        </div>
+        <form class="searchbar" v-on:submit.prevent="onSubmit">
+            <input type="text" placeholder="Search for posters" required v-model="search">
+            <input type="submit" value="search" class="btn"> </input>
+        </form>
+    </div>
+    <div v-if="loading">
+        Loading...
+    </div>
+    <div v-else class="search-results">
+        Found {{ products.length }} results for search term <em> {{ lastSearch }}</em>
     </div>
     <div class="main">
         <div class="products">
             <div v-for="product in products" class="product" v-bind:key="product.id">
                 <div>
+                    <div class="product-image">
+                        <img v-bind:src="product.link"/>
+                    </div>
+                </div>
+                <div>
                     <h4 class="product-title">{{ product.title }}</h4>
+                    <p class="product-price"> <strong>{{ product.price | currency }}</strong></p>
                     <button class="add-to-cart btn" v-on:click="addToCart(product)">Add to Cart</button>
                 </div>
+
             </div>
         </div>
         <div class="cart">
@@ -52,6 +71,7 @@
 <!-- Scripts -->
 <script src="/reload/reload.js"></script>
 <script type="text/javascript" src="node_modules/vue/dist/vue.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/vue-resource@1.5.1"></script>
 <script type="text/javascript" src="public/script.js"></script>
 
 </body>

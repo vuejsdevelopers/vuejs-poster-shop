@@ -13,7 +13,7 @@ app.use( bodyParser.json() );
 app.get('/', function(req, res) {
   res.sendFile(path.join(__dirname + '/index.html'));
 });
-
+console.log(process.env.IMGUR_CLIENT_ID);
 var instance = axios.create({
   baseURL: 'https://api.imgur.com/3/',
   headers: { 'Authorization': 'Client-ID ' + process.env.IMGUR_CLIENT_ID }
