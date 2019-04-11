@@ -20,12 +20,30 @@
     </div>
     <div class="main">
         <div class="products">
-            <button v-on:click="addToCart">Add to Cart</button>
+            <div v-for="product in products" class="product" v-bind:key="product.id">
+                <div>
+                    <h4 class="product-title">{{ product.title }}</h4>
+                    <button class="add-to-cart btn" v-on:click="addToCart(product)">Add to Cart</button>
+                </div>
+            </div>
         </div>
         <div class="cart">
             <h2>Shopping Cart</h2>
-            <div>
-                total: {{ total }}
+            <ul>
+                <li v-for="item in cart" v-bind:key="item.id" class="cart-item">
+                    <div class="item-title">
+                        {{ item.title }}
+                        <span class=item-qty> {{ item.price | currency }} x {{ item.qty }}</span>
+                        <button class="btn" v-on:click="inc(item)">+</button>
+                        <button class="btn" v-on:click="dec(item)">-</button>
+                    </div>
+                </li>
+            </ul>
+            <div v-if="cart.length" class="cart.total">
+                total: {{ total | currency}}
+            </div>
+            <div v-else class="empty-cart">
+                No items in cart
             </div>
         </div>
     </div>
