@@ -126,6 +126,17 @@ h1 {
     font-style: italic;
 }
 
+.delete-btn {
+    padding: 2%;
+    margin-left: 2%;
+    background-color: #F08080;
+    border-radius: 2px;
+    color: white;
+    user-select: none;
+    border: none;
+    cursor: pointer;
+    opacity: 1;
+}
 .product {
     padding: 1rem;
     border: 1px solid #E9E9E9;
@@ -229,3 +240,28 @@ h1 {
 .cart ul .cart-item button {
     margin-right: 3px;
 }
+
+
+/* / fade transitions / */
+
+.fade-enter {
+    opacity: 0;
+}
+
+.fade-enter-active {
+    transition: opacity 0.5s;
+}
+
+[v-cloak] > * {
+    display: none;
+}
+
+[v-cloak] > #loading {
+    display: block;
+    padding: 1em;
+}
+
+#loading {
+    display: none;
+}
+

@@ -28,9 +28,9 @@
     "dotenv": "~2.0.0",
     "express": "~4.16.3",
     "querystring": "~0.2.0",
-    "scrollmonitor": "~1.2.0",
+    "scrollmonitor": "^1.2.4",
     "vue": "^2.5.17",
-    "vue-resource": "~1.0.3"
+    "vue-resource": "^1.5.1"
   },
   "devDependencies": {
     "nodemon": "~1.11.0",

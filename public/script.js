@@ -1,14 +1,16 @@
+let LOAD_NUM = 4
+let watcher;
 
 new Vue({
   el: "#app",
   data: {
     total: 0,
-    products: [
-        { title: "product1", id: 1, price: 9.99},
-        { title: "product2", id: 2, price: 9.99},
-        { title: "product3", id: 3, price: 9.99}
-    ],
-    cart: []
+    products: [],
+    results: [],
+    cart: [],
+    search: "JavaScript",
+    lastSearch: "",
+    loading: false
   },
   methods: {
     addToCart(product) {
@@ -28,23 +30,67 @@ new Vue({
                 qty: 1
             })
         }
-
     },
+    clearCart() {
+          this.cart = []
+      },
     inc(item) {
         item.qty +=1
         this.total += item.price
     },
     dec(item) {
-       if (item.qty > 0) {
-            item.qty -= 1 
-            this.total -= item.price
-
+        item.qty -= 1
+        this.total -= item.price
+       if (item.qty <= 0) {
+           let indexOfCart = this.cart.indexOf(item)
+           this.cart.splice(indexOfCart, 1) // non destructive method
         }
-    }
+    },
+    randomNum() {
+        return Math.floor(Math.random() * 20) + 5; 
+    },
+    onSubmit() {
+        this.products = []
+        this.loading = true
+        let path = "/search/" + this.search
+        this.$http.get(path)
+            .then((resp) => resp.json())
+            .then(data => this.results = data.map(item => 
+                ({
+                id: item.id,
+                title: item.title,
+                price: this.randomNum(),
+                link:  item.link
+                })
+            ))
+            .then(() => 
+                {
+                this.lastSearch = this.search
+                this.loading = false
+                }
+            )
+            this.products = this.results
+        }
   },
   filters: {
       currency(price) {
           return "£" + price.toFixed(2)
       }
+  },
+  created: function() {
+      this.onSubmit()
+  },
+  updated: function() {
+      let sensor = document.querySelector("#product-list-bottom");
+      watcher = scrollMonitor.create(sensor)
+
+      watcher.enterViewport(this.appendResults)
+  },
+  beforeUpdate: function() {
+      if (watcher) {
+          watcher.destroy()
+          watcher = null
+      }
   }
 })
+
