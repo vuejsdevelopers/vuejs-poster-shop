@@ -1,11 +1,14 @@
+let LOAD_NUM = 4
+let watcher;
 
 new Vue({
   el: "#app",
   data: {
     total: 0,
     products: [],
+    results: [],
     cart: [],
-    search: "",
+    search: "JavaScript",
     lastSearch: "",
     loading: false
   },
@@ -27,8 +30,10 @@ new Vue({
                 qty: 1
             })
         }
-
     },
+    clearCart() {
+          this.cart = []
+      },
     inc(item) {
         item.qty +=1
         this.total += item.price
@@ -50,7 +55,7 @@ new Vue({
         let path = "/search/" + this.search
         this.$http.get(path)
             .then((resp) => resp.json())
-            .then(data => this.products = data.map(item => 
+            .then(data => this.results = data.map(item => 
                 ({
                 id: item.id,
                 title: item.title,
@@ -64,11 +69,28 @@ new Vue({
                 this.loading = false
                 }
             )
+            this.products = this.results
         }
   },
   filters: {
       currency(price) {
           return "£" + price.toFixed(2)
       }
+  },
+  created: function() {
+      this.onSubmit()
+  },
+  updated: function() {
+      let sensor = document.querySelector("#product-list-bottom");
+      watcher = scrollMonitor.create(sensor)
+
+      watcher.enterViewport(this.appendResults)
+  },
+  beforeUpdate: function() {
+      if (watcher) {
+          watcher.destroy()
+          watcher = null
+      }
   }
 })
+
