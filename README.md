@@ -81,6 +81,6 @@ node -v
 
 ## Sponsors
 
-<a href="https://vueschool.io" target="_blank"><img src="https://vueschool.io/img/logo/vueschool_logo_multicolor.svg" height="40" alt="Vue School"/></a>
+<a href="https://vueschool.io" target="_blank"><img src="https://vueschool.io/img/logo/vueschool_logo_multicolor.svg" height="40" alt="Vue School"/></a><a href="https://snipcart.com/" target="_blank"><img src="https://gallery.mailchimp.com/cd0e0c3fe7829518b809554a8/images/d907bcd6-7984-4d5f-9a2c-3ef1a0a722a7.png" height="40" alt="Snipcart"/></a>
 
 [Support Vue.js Developers](https://www.patreon.com/anthonygore?utm-source=github-vjd&utm-medium=link&utm_campaign=sponsors) to get your logo here.
